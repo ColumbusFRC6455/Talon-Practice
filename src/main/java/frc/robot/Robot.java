@@ -1,0 +1,102 @@
+// Copyright (c) FIRST and other WPILib contributors.
+// Open Source Software; you can modify and/or share it under the terms of
+// the WPILib BSD license file in the root directory of this project.
+
+package frc.robot;
+
+import com.ctre.phoenix.motorcontrol.FeedbackDevice;
+import com.ctre.phoenix.motorcontrol.LimitSwitchNormal;
+import com.ctre.phoenix.motorcontrol.LimitSwitchSource;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
+import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.subsystems.Drive.Drivebase;
+import frc.robot.subsystems.Drive.OI;
+
+
+
+public class Robot extends TimedRobot {
+
+  public static OI oi;
+public static Drivebase drivebase;
+
+  private Command m_autonomousCommand;
+
+  private RobotContainer m_robotContainer;
+
+  @Override
+  public void robotInit() {
+   drivebase = new Drivebase();
+   oi = new OI();
+    m_robotContainer = new RobotContainer();
+  }
+
+  
+  @Override
+  public void robotPeriodic() {
+    CommandScheduler.getInstance().run();
+  }
+
+ 
+  @Override
+  public void disabledInit() {}
+
+  @Override
+  public void disabledPeriodic() {}
+
+  @Override
+  public void autonomousInit() {
+    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+
+    
+    if (m_autonomousCommand != null) {
+      m_autonomousCommand.schedule();
+    }
+  }
+
+  
+  @Override
+  public void autonomousPeriodic() {}
+
+  @Override
+  public void teleopInit() {
+    
+    if (m_autonomousCommand != null) {
+      m_autonomousCommand.cancel();
+    }
+  }
+
+
+  @Override
+  public void teleopPeriodic() {}
+
+  @Override
+  public void testInit() {
+    CommandScheduler.getInstance().cancelAll();
+  }
+
+ 
+  @Override
+  public void testPeriodic() {}
+
+ 
+  @Override
+  public void simulationInit() {}
+
+  @Override
+  public void simulationPeriodic() {}
+
+  public static void initTalon(TalonSRX motor){
+    motor.setNeutralMode(NeutralMode.Coast);
+    motor.neutralOutput();
+    motor.setSensorPhase(false);
+    motor.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed, 0);
+    motor.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed, 0);
+    motor.configNominalOutputForward(0.0, 0);
+    motor.configNominalOutputReverse(0.0, 0);
+    motor.configClosedloopRamp(0.5, 0);
+  }
+}
