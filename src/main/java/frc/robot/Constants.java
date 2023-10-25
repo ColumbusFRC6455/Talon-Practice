@@ -14,11 +14,16 @@ package frc.robot;
  */
 public enum Constants {
 //Motor Mappings
-  LEFT_MOTOR(0),
-  RIGHT_MOTOR(1),
+  LEFT_MOTOR0(0),
+  LEFT_MOTOR1(2),
+  RIGHT_MOTOR0(1),
+  RIGHT_MOTOR1(3),
+  
 //Joysticks 
 JOY_DRIVE(0),
-JOY_SPARE(1);
+JOY_SPARE(1)
+
+;
   public final int value;
 
   Constants(int value)
