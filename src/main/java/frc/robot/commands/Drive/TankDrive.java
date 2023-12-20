@@ -4,6 +4,9 @@ import frc.robot.Robot;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Drive.Drivebase;
 import frc.robot.subsystems.Drive.OI;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 
@@ -20,7 +23,7 @@ public class TankDrive extends CommandBase {
   @Override
   public void execute() {
     double throttle = (1.0 - OI.JoyDrive.getThrottle())/ -2.0;;
-    Robot.drivebase.setRaw(Robot.oi.getdriveJoyX() * throttle, Robot.oi.getdriveJoyY() * throttle);
+    Robot.drivebase.set(ControlMode.PercentOutput, Robot.oi.getdriveJoyX() * throttle, Robot.oi.getdriveJoyY() * throttle);
   }
     
   @Override
