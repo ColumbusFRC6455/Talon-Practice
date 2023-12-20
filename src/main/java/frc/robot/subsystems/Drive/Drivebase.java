@@ -27,10 +27,10 @@ public class Drivebase extends SubsystemBase implements PIDoutput {
     private final double kD = 0;
 
     public Drivebase() { 
-        leftMotor0 = new TalonSRX(Constants.LEFT_MOTOR0.value);
-        rightMotor0 = new TalonSRX(Constants.RIGHT_MOTOR0.value);
-        leftMotor1 = new TalonSRX(Constants.LEFT_MOTOR1.value);
-        rightMotor1 = new TalonSRX(Constants.RIGHT_MOTOR1.value);
+        leftMotor0 = new TalonSRX(Constants.DRIVE_MOTORS.LEFT_MOTOR0.value);
+        rightMotor0 = new TalonSRX(Constants.DRIVE_MOTORS.RIGHT_MOTOR0.value);
+        leftMotor1 = new TalonSRX(Constants.DRIVE_MOTORS.LEFT_MOTOR1.value);
+        rightMotor1 = new TalonSRX(Constants.DRIVE_MOTORS.RIGHT_MOTOR1.value);
 
         
 

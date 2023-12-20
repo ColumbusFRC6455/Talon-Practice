@@ -12,16 +12,35 @@ package frc.robot;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
-public enum Constants {
+public final class Constants {
 //Motor Mappings
-  LEFT_MOTOR0(0),
-  LEFT_MOTOR1(2),
-  RIGHT_MOTOR0(1),
-  RIGHT_MOTOR1(3),
+
+public static class DRIVE_MOTORS {
+  public static final int LEFT_MOTOR0 = 0,
+  public static final int LEFT_MOTOR1 = 2,
+  public static final int RIGHT_MOTOR0 = 1,
+  public static final int RIGHT_MOTOR = 3,
+}
+  
   
 //Joysticks 
-JOY_DRIVE(0),
-JOY_SPARE(1)
+public static class DRIVE_MOTORS {
+  public static final int JOY1 = 0,
+  public static final int JOY2 = 1,
+}
+
+//Arm Motors
+public static class ARM_MOTORS {
+  public static final int Arm_Motor = 4,
+}
+
+public static class ARM{
+  public static final int Arm_Min_Ang = 0,
+  public static final int Arm_Max_Ang = 0,
+
+
+
+}
 
 ;
   public final int value;
