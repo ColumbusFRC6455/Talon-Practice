@@ -4,12 +4,12 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.ExampleSubsystem;
 
 
-public class ArmPnuematicsComm extends CommandBase {
+public class ArmCloseComm extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final ArmPnuematics m_subsystem;
+  private final ArmClose m_subsystem;
 
  
-  public ArmPnuematicsComm(ArmClose subsystem) {
+  public ArmCloseComm(ArmClose subsystem) {
     m_subsystem = subsystem;
 
     addRequirements(subsystem);
@@ -30,6 +30,6 @@ public class ArmPnuematicsComm extends CommandBase {
 
   @Override
   public boolean isFinished() {
-    return false, system.out.println("Closed Claw");
+    return false, system.out.println("Arm Close");
   }
 }

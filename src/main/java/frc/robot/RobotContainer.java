@@ -24,10 +24,10 @@ public class RobotContainer {
  ArmSetPosition ArmCommand2 = new ArmSetPosition(ArmSubsystem, Constants.ARM.Arm_90_Ang);
  ArmSetPosition ArmCommand3 = new ArmSetPosition(ArmSubsystem, Constants.ARM.Arm_Max_Ang);
  ArmSetPosition ArmCommand4 = new ArmSetPosition(ArmSubsystem, Constants.ARM.Arm_Min_Ang);
- ArmPnuematicsComm ArmPnuematics1 = new ArmPnuematicsComm(ArmOpen);
- ArmPnuematicsComm ArmPnuematics2 = new ArmPnuematicsComm(ArmClose);
+ ArmPnuematicsComm ArmPnuematics1 = new ArmOpenComm(ArmOpen);
+ ArmPnuematicsComm ArmPnuematics2 = new ArmCloseComm(ArmClose);
   public RobotContainer() {
-    //
+
     configureBindings();
   }
 

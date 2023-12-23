@@ -16,7 +16,7 @@ import frc.robot.RobotContainer;
 import com.kauailabs.navx.frc.*;
 
 public class Drivebase extends SubsystemBase implements PIDoutput {
-public Arm() { 
+public ArmSubsystem() { 
     arm_motor = new TalonSRX(Constants.ARM_MOTORS.Arm_Motor.value);
     armController = new PIDController(kP, kI, kD);
     coder = new CanCoder();
