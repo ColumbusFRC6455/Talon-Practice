@@ -16,30 +16,37 @@ public final class Constants {
 //Motor Mappings
 
 public static class DRIVE_MOTORS {
-  public static final int LEFT_MOTOR0 = 0,
-  public static final int LEFT_MOTOR1 = 2,
-  public static final int RIGHT_MOTOR0 = 1,
-  public static final int RIGHT_MOTOR = 3,
+  public static final int LEFT_MOTOR0 = 7,
+  public static final int LEFT_MOTOR1 = 4,
+  public static final int RIGHT_MOTOR0 = 6,
+  public static final int RIGHT_MOTOR = 2,
 }
   
   
 //Joysticks 
-public static class DRIVE_MOTORS {
+public static class JOYSTICKS {
   public static final int JOY1 = 0,
   public static final int JOY2 = 1,
 }
 
 //Arm Motors
 public static class ARM_MOTORS {
-  public static final int Arm_Motor = 4,
+  public static final int Arm_Motor = 1,
 }
 
 public static class ARM{
-  public static final int Arm_Min_Ang = 0,
+  public static final int Arm_0_Ang = 0,
+  public static final int Arm_90_Ang = 0,
   public static final int Arm_Max_Ang = 0,
+  public static final int Arm_Min_Ang = 0,
+  public static final int Arm_Test_Ang = 0,
 
+  // Once found real angle subract or add to make 90, 180 or 0
+}
 
-
+public static class PNUEMATICS {
+  public static final int pcm = 8,
+  public static final int solenoid = 8
 }
 
 ;
